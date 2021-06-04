@@ -8,6 +8,6 @@ public class IpadPro implements Ipad{
 
     @Override
     public void music() {
-        System.out.println("listen  apple music");
+        System.out.println("listen apple music");
     }
 }
