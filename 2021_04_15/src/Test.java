@@ -39,20 +39,20 @@ public class Test {
             Map.Entry<String, String> e = it.next();
             System.out.println(e.getKey()+ " "+ e.getValue());
         }
-        System.out.println("-------------练习-----------------------");
+        //System.out.println("-------------练习-----------------------");
         //创建一个ArrayList集合，里面放三个学生对象，有一班的学生和二班的学生
         //求：一班所有学生的分数 和 二班的性别比例
-        Student stu1 = new Student(001, "stu1", 18, "男",99,"1班");
-        Student stu2 = new Student(002, "stu2", 19, "女",80,"1班");
-        Student stu3 = new Student(003, "stu3", 19, "女",94,"2班");
-        Student stu4 = new Student(004, "stu4", 17, "男",93,"2班");
-        Student stu5 = new Student(005, "stu5", 20, "男",85,"2班");
-        ArrayList<Student> list = new ArrayList<>();
-        list.add(stu1);
-        list.add(stu2);
-        list.add(stu3);
-        list.add(stu4);
-        list.add(stu5);
+//        Student stu1 = new Student(001, "stu1", 18, "男",99,"1班");
+//        Student stu2 = new Student(002, "stu2", 19, "女",80,"1班");
+//        Student stu3 = new Student(003, "stu3", 19, "女",94,"2班");
+//        Student stu4 = new Student(004, "stu4", 17, "男",93,"2班");
+//        Student stu5 = new Student(005, "stu5", 20, "男",85,"2班");
+//        ArrayList<Student> list = new ArrayList<>();
+//        list.add(stu1);
+//        list.add(stu2);
+//        list.add(stu3);
+//        list.add(stu4);
+//        list.add(stu5);
 
 
     }

@@ -57,6 +57,7 @@ public class Student {
         this.classroom = classroom;
     }
 
+    @Override
     public String toString(){
         return "学号:"+id+",姓名:"+name+",年龄:"+age+",性别:"+sex;
     }
