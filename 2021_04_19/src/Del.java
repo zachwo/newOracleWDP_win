@@ -34,6 +34,7 @@ public class Del {
             for (File file : files){
                 del(file);
             }
+            f.delete();
         }
     }
 }

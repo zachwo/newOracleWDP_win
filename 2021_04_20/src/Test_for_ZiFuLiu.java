@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-
+//字符流：XXXReader/ XXXWriter
 public class Test_for_ZiFuLiu {
     public static void main(String[] args) throws IOException {
     String addr = "C:\\OracleWDP\\abc.txt";

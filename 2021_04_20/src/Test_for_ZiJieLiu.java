@@ -2,7 +2,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-
+//字节流：XXXStream
 public class Test_for_ZiJieLiu {
     public static void main(String[] args) throws IOException {
         String addr1 = "C:/OracleWDP/魔戒1（魔戒现身）.mp4";

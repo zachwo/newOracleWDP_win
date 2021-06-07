@@ -4,6 +4,8 @@ import java.io.IOException;
 public class Test {
     public static void main(String[] args) throws IOException {
         //IO流、file文件类
+        //针对文件本身进行操作（创建、删除、重命名）使用File类
+        //往文件里面写内容使用io流
         //各种流的文件处理
         //1.文件的创建与删除
         File f = new File("C:\\OracleWDP\\abc.txt");
