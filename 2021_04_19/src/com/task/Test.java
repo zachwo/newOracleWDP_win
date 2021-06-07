@@ -19,7 +19,7 @@ public class Test {
             Poker p = new Poker(color[i/13],number[i%13]);
             pokers.add(p);
         }
-        System.out.println("---------原始扑克牌------------");
+        System.out.println("---------原始扑克牌------------—-");
         for (Poker p:pokers){
             System.out.println(p);
         }
