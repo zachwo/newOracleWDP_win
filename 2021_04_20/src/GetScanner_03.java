@@ -5,7 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class GetScanner {
+public class GetScanner_03 {
     public static void main(String[] args) throws IOException {
         String addr = "C:/OracleWDP/get.txt";
         File f = new File(addr);

@@ -3,7 +3,7 @@ import com.sun.jdi.PathSearchingVirtualMachine;
 import java.io.*;
 import java.util.Scanner;
 
-public class Task_for_ZiFuLiu {
+public class Task_for_ZiFuLiu_04 {
     //字符流的应用
     //task1:文件流的应用——节点流
     //将以下信息写出到db.properties文件中：
@@ -57,16 +57,16 @@ public class Task_for_ZiFuLiu {
 
         BufferedWriter bw = new BufferedWriter(new FileWriter(addr));
         bw.write("username=root");
-        bw.newLine();
+        bw.newLine();//写入换行
         bw.write("pwd=root");
         bw.newLine();
         bw.write("url=aaaaa");
         bw.newLine();
         bw.write("driver=com.mysql.jdbc.Driver");
         bw.close();
-
+        //BufferedReader用于一次读取一行数据
         BufferedReader br = new BufferedReader(new FileReader(addr));
-        String str = br.readLine();
+        String str = br.readLine(); //一次读取一行
         while (str != null){
             //System.out.println(str);
             String[] strs = str.split("=");

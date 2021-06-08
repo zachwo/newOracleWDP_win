@@ -3,7 +3,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class FileReadWrite {
+public class FileCopy_02 {
     public static void main(String[] args) throws IOException {
         String addr1 = "C:\\OracleWDP\\aaa.txt";
         String addr2 = "C:\\OracleWDP\\bbb.txt";

@@ -8,14 +8,14 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 //字符流：XXXReader/ XXXWriter
-public class Test_for_ZiFuLiu {
+public class Test_for_ZiFuLiu_01 {
     public static void main(String[] args) throws IOException {
     String addr = "C:\\OracleWDP\\abc.txt";
 
     //task1: 文件的读入
     //读取字符串用字符流(input)
     FileReader fr = new FileReader(addr);
-    char c[] = new char[3];
+    char c[] = new char[3]; //临时数组，用作读取的缓冲区
     int length = fr.read(c); //最多读取c.length长度的字符串，同时返回本次读取的字符长度
     while (length != -1){   //文件读完的标志的read()返回的数值为-1
         String str = new String(c,0,length);
