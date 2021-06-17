@@ -5,7 +5,7 @@ import java.io.*;
 /**
  * 对称加密的应用
  */
-public class FileEncrypt {
+public class FileEncrypt_06 {
     public static void main(String[] args) throws IOException {
         String addr1 = "C:\\OracleWDP\\向日葵.jpg";
         String addr2 = "C:\\OracleWDP\\向日葵.encrypt.jpg";
@@ -18,12 +18,12 @@ public class FileEncrypt {
         FileInputStream fis = new FileInputStream(addr2);
         FileOutputStream fos = new FileOutputStream(addr3);
 
-        byte key = 10;
+        byte key = 10;  //密钥
         byte[] b = new byte[10];
         int length = fis.read(b);
         while (length!=-1){
             for (int i = 0; i< b.length ;i++){
-                b[i] = (byte)(b[i]^key);
+                b[i] = (byte)(b[i]^key);    //^: 按位进行异或操作
             }
 
             fos.write(b,0,length);

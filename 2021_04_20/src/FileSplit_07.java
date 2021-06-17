@@ -6,7 +6,7 @@ import java.io.IOException;
 /**
  * 文件拆分练习（应用：p2p,分布式部署）
  */
-public class FileSplit {
+public class FileSplit_07 {
     public static void main(String[] args) throws IOException {
 //        String addr = "C:\\OracleWDP\\向日葵.jpg";
 //        String addr_i = "C:\\OracleWDP\\向日葵_part1.jpg";
