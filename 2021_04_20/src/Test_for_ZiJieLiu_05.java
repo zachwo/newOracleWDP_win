@@ -6,7 +6,7 @@ import java.io.IOException;
 public class Test_for_ZiJieLiu_05 {
     public static void main(String[] args) throws IOException {
         String addr1 = "C:/OracleWDP/魔戒1（魔戒现身）.mp4";
-        String addr2 = "C:/OracleWDP/copyvidoe.mp4";
+        String addr2 = "C:/OracleWDP/copyvideo.mp4";
 
         FileInputStream fis = new FileInputStream(addr1);
         FileOutputStream fos = new FileOutputStream(addr2);
