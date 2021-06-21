@@ -9,7 +9,7 @@ public class Client {
     public static void main(String[] args) throws IOException, InterruptedException {
         Socket s = new Socket("127.0.0.1",8888);
         OutputStream os = s.getOutputStream();
-        os.write("服务器你好，我是客户机".getBytes());
+        os.write("hello,i'm client".getBytes());
         os.flush();
 
         //接收服务器信息

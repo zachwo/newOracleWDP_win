@@ -13,12 +13,12 @@ import java.net.Socket;
 public class Server {
     public static void main(String[] args) throws IOException, InterruptedException {
         ServerSocket ss = new ServerSocket(8888);
-        System.out.println("等待连接...");
+        System.out.println("waiting for client ...");
         Socket s = ss.accept();//生成Socket对象以接收客户机的信息
-        System.out.println(s.getInetAddress().getHostAddress()+"连接成功");
+        System.out.println(s.getInetAddress().getHostAddress()+" connected successfully");
 
         InputStream is = s.getInputStream();//输入流接收客户端发出的字节数组
-        byte[] b = new byte[1024];
+        byte[] b = new byte[24];
         String str = "";
         int length = is.read(b);
         //此处有bug，原因未知
@@ -31,7 +31,7 @@ public class Server {
 
         //服务器返回消息
         OutputStream os = s.getOutputStream();
-        os.write("这是一条来自服务器的回应".getBytes());
+        os.write("i'm server, i've got your message".getBytes());
         os.flush();
         os.close();
 
