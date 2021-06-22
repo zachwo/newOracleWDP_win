@@ -1,4 +1,4 @@
-package multiThread;
+package multiThread_way1;
 
 /**
  * setDaemon(true); 设置守护线程   精灵线程

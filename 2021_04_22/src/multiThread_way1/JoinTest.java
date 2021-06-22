@@ -1,4 +1,4 @@
-package multiThread;
+package multiThread_way1;
 //join方法用于插队，当插入线程完毕后原线程才能接着执行
 public class JoinTest  extends Thread {
     @Override

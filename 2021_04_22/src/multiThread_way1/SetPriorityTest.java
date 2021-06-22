@@ -1,4 +1,4 @@
-package multiThread;
+package multiThread_way1;
 
 public class SetPriorityTest extends Thread{
     @Override

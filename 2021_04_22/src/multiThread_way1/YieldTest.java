@@ -1,6 +1,4 @@
-package multiThread;
-
-import com.sun.jdi.PathSearchingVirtualMachine;
+package multiThread_way1;
 
 // yield()方法用于礼让
 // 发出礼让行为的线程会释放占用的cpu然后和其他被礼让的线程一起去重新抢占cpu

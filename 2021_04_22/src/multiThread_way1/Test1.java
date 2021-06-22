@@ -1,4 +1,4 @@
-package multiThread;
+package multiThread_way1;
 //实现多线程的方法一：继承Thread类，重写run()方法
 public class Test1 extends Thread{
     @Override
