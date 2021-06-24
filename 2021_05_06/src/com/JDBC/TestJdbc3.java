@@ -7,6 +7,9 @@ import java.util.ArrayList;
 
 /**
  * pojo & arraylist
+ *  定义一个方法，用来查询 account2表中的所有数据信息
+ *  将信息封装成 对象 放入到集合中 最后返回集合
+ *  数据--》  对象 --》 ArrayList 集合中
  */
 public class TestJdbc3 {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {

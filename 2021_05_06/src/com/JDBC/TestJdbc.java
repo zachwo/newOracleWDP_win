@@ -30,7 +30,7 @@ public class TestJdbc {
         //3-获取执行对象
         //3.1增删改 & 建库建表
         Statement st = con.createStatement();
-//        String sql = "insert into student(Sno,Sname,Ssex) values('007','邦德','男')";
+//        String sql = "insert into student(Sno,Sname,Ssex) values('007','邦德','男')";    //sql语句不能加';'
 //        int x = st.executeUpdate(sql);    //返回数据库受影响行数
 //        System.out.println(x + "行 受影响");
         //4-遍历结果集

@@ -4,7 +4,7 @@ import com.pojo.Account;
 import java.sql.*;
 import java.util.Scanner;
 
-//PreparedStatement的用法
+//PreparedStatement的用法：避免SQL注入问题
 public class TestJdbc2 {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.jdbc.Driver");

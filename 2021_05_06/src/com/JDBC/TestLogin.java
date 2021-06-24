@@ -51,38 +51,77 @@ public class TestLogin {
 //        }
 
         //3、完成登录功能（让用户输入用户名和密码）
-        for (int i = 3;i>0;i--){
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("欢迎登陆，请输入账户名和密码：");
-            String login = scanner.next();
-            String pwd = scanner.next();
-            boolean flag = false;
+//        for (int i = 3;i>0;i--){
+//            Scanner scanner = new Scanner(System.in);
+//            System.out.println("欢迎登陆，请输入账户名和密码：");
+//            String login = scanner.next();
+//            String pwd = scanner.next();
+//            boolean flag = false;
+//
+//            String sql3 = "select * from account;";
+//            ResultSet rs = statement.executeQuery(sql3);
+//            while (rs.next()){
+//                String correctLogin = rs.getString("login");
+//                String correctPwd = rs.getString("pwd");
+//
+//                if (!login.equals(correctLogin)){
+//                    continue;
+//                }else if (pwd.equals(correctPwd)){
+//                    flag = true;
+//                    System.out.println("登陆成功，以下为您的账户信息：");
+//                    System.out.println(
+//                            "户主姓名：\t"+rs.getString("name")+"\n"+
+//                                    "账户余额：\t"+ rs.getDouble("money"));
+//                    break;
+//                }
+//            }
+//            if (flag==false){
+//                System.out.println("用户名或密码错误，今日还可尝试"+(i-1)+"次");
+//            }else {
+//                break;
+//            }
+//        }
 
-            String sql3 = "select * from account;";
-            ResultSet rs = statement.executeQuery(sql3);
-            while (rs.next()){
-                String correctLogin = rs.getString("login");
-                String correctPwd = rs.getString("pwd");
+        //3-optimize：完成登录功能（让用户输入用户名和密码）
+        Scanner scanner = new Scanner(System.in);
+        String login = scanner.nextLine();
+        String pwd = scanner.nextLine();
+        //SQL注入漏洞：输入 zacharywong880 xxx' or '1' = '1 同样能够实现登录功能
+        String sql4 = "select * from account where login = '"+login+"' and pwd = '"+pwd+"'";
+        System.out.println(sql4);
 
-                if (!login.equals(correctLogin)){
-                    continue;
-                }else if (pwd.equals(correctPwd)){
-                    flag = true;
-                    System.out.println("登陆成功，以下为您的账户信息：");
-                    System.out.println(
-                            "户主姓名：\t"+rs.getString("name")+"\n"+
-                                    "账户余额：\t"+ rs.getDouble("money"));
-                    break;
-                }
-            }
-            if (flag==false){
-                System.out.println("用户名或密码错误，今日还可尝试"+(i-1)+"次");
-            }else {
-                break;
-            }
+        ResultSet rs = statement.executeQuery(sql4); //养成习惯，用于debug查错
+        boolean flag = false;
+        while (rs.next()){
+            flag = true;
+            System.out.println("name:\t"+rs.getString("name"));
+            System.out.println("login:\t"+rs.getString("login"));
+            System.out.println("pwd:\t"+rs.getString("pwd"));
+            System.out.println("money:\t"+rs.getString("money"));
         }
+        if (flag){
+            System.out.println("登录成功");
+        }else{
+            System.out.println("登录失败");
+        }
+
         statement.close();
         connection.close();
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
