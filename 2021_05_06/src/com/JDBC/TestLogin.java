@@ -42,14 +42,15 @@ public class TestLogin {
 //            System.out.println(x2+"行 受到了影响");
 //
 //            name = scanner.next();
-//            if (name.equals("end"))
+//            if (name.equals("end")) {
 //                break;
+//            }
 //            login = scanner.next();
 //            pwd = scanner.next();
 //            money = scanner.nextDouble();
 //        }
 
-        //3、完成登录功能
+        //3、完成登录功能（让用户输入用户名和密码）
         for (int i = 3;i>0;i--){
             Scanner scanner = new Scanner(System.in);
             System.out.println("欢迎登陆，请输入账户名和密码：");
