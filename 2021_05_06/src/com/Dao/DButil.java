@@ -2,7 +2,7 @@ package com.Dao;
 
 import java.sql.*;
 
-public class DButil {
+public class  DButil {
     private Connection con;
     private PreparedStatement ps;
     private ResultSet rs;
