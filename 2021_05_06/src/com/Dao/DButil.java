@@ -1,7 +1,7 @@
 package com.Dao;
 
 import java.sql.*;
-
+//数据库工具类DBUtil
 public class  DButil {
     private Connection con;
     private PreparedStatement ps;
@@ -40,7 +40,7 @@ public class  DButil {
         getConnection();
         ps = con.prepareStatement(sql);
         System.out.println(sql);
-        for (int i = 0; i<param.length; i++){
+        for (int i = 0; i<param.length; i++){   //参数复制操作
             ps.setObject(i+1, param[i]);
             System.out.println(i+1+": "+param[i]);
         }

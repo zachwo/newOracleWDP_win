@@ -27,9 +27,9 @@ public class TestDao {
         //System.out.println(accountDao.delete(account)+ "行 受到了影响");
         //查
         //ArrayList<Account> list = ADDB.check();
-        ArrayList<Account> list = ADDB.blurCheck("张","zh");
-        for (int i = 0;i<list.size();i++)
+        ArrayList<Account> list = ADDB.blurCheck("z",null);
+        for (int i = 0;i<list.size();i++) {
             System.out.println(list.get(i).toString());
-
+        }
     }
 }

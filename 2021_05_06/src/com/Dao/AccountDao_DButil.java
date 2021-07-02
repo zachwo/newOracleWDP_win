@@ -65,7 +65,7 @@ public class AccountDao_DButil {
     //模糊+组合查询
     public ArrayList<Account> blurCheck(String name, String login) throws SQLException, ClassNotFoundException {
         String sql = "select * from account where 1=1";
-        ArrayList params = new ArrayList<>();
+        ArrayList params = new ArrayList<>();   //参数集合
         if (name != null){
             sql += " and name like ?";
             params.add("%"+name+"%");
@@ -76,7 +76,7 @@ public class AccountDao_DButil {
         }
 
         DButil dButil = new DButil();
-        ResultSet rs = dButil.executeQuery(sql,params.toArray()); // 一定要记得toArray()!!!
+        ResultSet rs = dButil.executeQuery(sql,params.toArray()); // 一定要记得调用toArray()方法!!!，否则编译器会将list集合看作一个整体参数
 
         ArrayList<Account> list = new ArrayList<>();
         while (rs.next()){

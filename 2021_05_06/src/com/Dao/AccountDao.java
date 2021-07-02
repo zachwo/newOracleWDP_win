@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 /**
  * DAO:data access object数据访问对象（MVC三层结构之一）
- * dao实现对数据库的增删改查方法
+ * dao实现对数据库的增删改查方法（对象或者是集合的数据传递）
  */
 public class AccountDao {
     //增

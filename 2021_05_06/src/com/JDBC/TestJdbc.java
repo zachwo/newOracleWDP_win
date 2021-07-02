@@ -47,6 +47,7 @@ public class TestJdbc {
             System.out.println(sno+"\t"+sname+"\t"+ssex+"\t"+sbirth+"\t"+classes);
         }
         //5-关闭连接
+        rs.close();
         st.close();
         con.close();
 
