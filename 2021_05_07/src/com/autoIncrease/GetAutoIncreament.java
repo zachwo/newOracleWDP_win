@@ -1,4 +1,4 @@
-package com.JDBC;
+package com.autoIncrease;
 
 import com.Dao.DButil;
 
@@ -7,7 +7,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class GetZiZeng {
+/**
+ *获取自增问题
+ */
+public class GetAutoIncreament {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         DButil dbu = new DButil();
         Connection con = dbu.getConnection();

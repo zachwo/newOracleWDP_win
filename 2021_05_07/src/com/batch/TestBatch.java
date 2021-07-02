@@ -1,4 +1,4 @@
-package com.JDBC;
+package com.batch;
 
 import com.Dao.DButil;
 
@@ -6,6 +6,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+ * 批处理
+ */
 public class TestBatch {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         long start = System.currentTimeMillis();

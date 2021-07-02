@@ -1,4 +1,4 @@
-package com.JDBC;
+package com.transaction;
 
 import com.Dao.DButil;
 
@@ -6,6 +6,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 // jdbc 的事务处理
+/**
+ * 数据库事务：Database Transaction，满足ACID属性
+ * 数据库事务( transaction)是访问并可能操作各种数据项的一个数据库操作序列，
+ * 这些操作要么全部执行,要么全部不执行，是一个不可分割的工作单位。
+ * 事务由事务开始与事务结束之间执行的全部数据库操作组成。
+ */
 public class TestTransaction {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         DButil dbu = new DButil();
