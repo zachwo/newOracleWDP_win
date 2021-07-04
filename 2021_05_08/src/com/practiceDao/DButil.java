@@ -1,9 +1,10 @@
-package com.Dao;
+package com.practiceDao;
 
 import java.sql.*;
+
 //数据库工具类DBUtil
 //要求会通过dbu完成dao的开发，实现"增删改查"功能
-public class  DButil {
+public class DButil {
     private Connection con;
     private PreparedStatement ps;
     private ResultSet rs;
