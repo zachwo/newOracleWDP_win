@@ -2,11 +2,9 @@ package com.practiceDao;
 
 import com.practiceDao.pojo.Account;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class AccountDao {
     //增
@@ -123,7 +121,6 @@ public class AccountDao {
             return account;
         }else {
             System.out.println("用户名或密码错误！");
-            dbu.closeAll();
             return null;
         }
     }
@@ -139,8 +136,77 @@ public class AccountDao {
         String sql = "update account set money = money-? where id=?";
         int x = dbu.executeUpdate(sql,money,account.getId());
         return x;
+    }
+
+    //新用户注册
+    public int signUp() throws SQLException, ClassNotFoundException {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("请输入用户名：");
+        String name = scanner.nextLine();
+        System.out.println("请输入登录账号：");
+        String login = scanner.nextLine();
+        System.out.println("请输入登录密码：");
+        String pwd = scanner.nextLine();
+        System.out.println("请再次输入登录密码确认：");
+        String pwd1 = scanner.nextLine();
+        while (!pwd.equals(pwd1)){
+            System.out.println("两次输入的登录密码不一致，请重新输入密码：");
+            pwd = scanner.nextLine();
+            System.out.println("请再次输入登录密码确认：");
+            pwd1 = scanner.nextLine();
+        }
+        String sql = "INSERT \n" +
+                "INTO account(id,name, login, pwd, money) \n" +
+                "VALUES(DEFAULT,?,?,?,0);";
+        DButil dbu = new DButil();
+        return dbu.executeUpdate(sql,name,login,pwd);
+    }
+
+    //查询余额
+    public double getRemain(String login) throws SQLException, ClassNotFoundException {
+        String sql = "select money from account where login = ?";
+        DButil dbu = new DButil();
+        ResultSet rs = dbu.executeQuery(sql,login);
+        rs.next();
+        double remain = rs.getDouble("money");
+        rs.close();
+        return remain;
 
     }
 
+    //转账
+    public int transMoney() throws SQLException, ClassNotFoundException {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("请输入转账账户和密码：");
+        String login = scan.nextLine();
+        String pwd = scan.nextLine();
+        Account account = login(login,pwd);
+        if (account == null){
+            System.out.println("账户或密码错误，转账失败！");
+            return 0;
+        }
+        System.out.println("请输入收款账户：");
+        String login1 = scan.nextLine();
+        DButil dbu = new DButil();
+        String sql = "select * from account where login = ?";
+        ResultSet rs = dbu.executeQuery(sql,login1);
+        if (!rs.next()){
+            System.out.println("查无此人，转账失败！");
+            return 0;
+        }
+        System.out.println("请输入转账金额：");
+        double money = scan.nextDouble();
+        if (account.getMoney() < money){
+            System.out.println("余额不足，转账失败！");
+            return 0;
+        }
+        String sql1 = "update account set money = money - ? where login = ?;";
+        String sql2 = "update account set money = money + ? where login = ?;";
+        int x = dbu.executeUpdate(sql1,money,login);
+        x += dbu.executeUpdate(sql2,money,login1);
+
+        return x;
+
+    }
 
 }

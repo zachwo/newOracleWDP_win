@@ -58,6 +58,7 @@ public class DButil {
         System.out.println(sql);
         for (int i = 0 ; i < param.length ; i++){
             ps.setObject(i+1,param[i]);
+            System.out.println(i+1+": "+param[i]);
         }
         rs = ps.executeQuery();
         return rs;
