@@ -5,22 +5,10 @@ import java.util.Date;
 
 public class TradeRecord {
     private int id;
-    private String user;
-    private String tradeType;
-    private Date tradeTime;
-
-    public TradeRecord() {
-    }
-
-    @Override
-    public String toString() {
-        return "TradeRecord{" +
-                "id=" + id +
-                ", user='" + user + '\'' +
-                ", tradeType='" + tradeType + '\'' +
-                ", tradeTime=" + tradeTime +
-                '}';
-    }
+    private String userName;    //用户名
+    private String tradeType;   //交易类型
+    private double tradeAmount; //交易额
+    private String tradeTime;   //交易时间
 
     public int getId() {
         return id;
@@ -30,12 +18,12 @@ public class TradeRecord {
         this.id = id;
     }
 
-    public String getUser() {
-        return user;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getTradeType() {
@@ -46,11 +34,19 @@ public class TradeRecord {
         this.tradeType = tradeType;
     }
 
-    public Date getTradeTime() {
+    public double getTradeAmount() {
+        return tradeAmount;
+    }
+
+    public void setTradeAmount(double tradeAmount) {
+        this.tradeAmount = tradeAmount;
+    }
+
+    public String getTradeTime() {
         return tradeTime;
     }
 
-    public void setTradeTime(Date tradeTime) {
+    public void setTradeTime(String tradeTime) {
         this.tradeTime = tradeTime;
     }
 }
