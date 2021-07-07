@@ -20,5 +20,9 @@ public class Test3 {
         //调用方法
         m.invoke(stu);
         m1.invoke(stu,"张三");
+
+        Method m2 = studentClass.getDeclaredMethod("getOne");
+        Object o = m2.invoke(stu);
+        System.out.println(o);
     }
 }

@@ -2,7 +2,7 @@ package com.reflect;
 
 public class Student {
     private int sno;
-    public String sname;
+    private String sname;
     protected String ssex;
     String sbirthday;
     static String classes;
@@ -13,6 +13,9 @@ public class Student {
     }
     public void sayHi(String name){
         System.out.println("Hi, "+name);
+    }
+    public int getOne(){
+        return 1;
     }
 
     public static String getXxx() {

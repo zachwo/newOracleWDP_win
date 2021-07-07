@@ -8,6 +8,15 @@ public class Student {
     static String classes;
     public static String xxx;
 
+    public Student() {
+        System.out.println("执行了无参构造方法");
+    }
+
+    public Student(String sname) {
+        this.sname = sname;
+        System.out.println("执行了有参构造方法");
+    }
+
     public void sayHi(){
         System.out.println("Hi!");
     }
