@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ORMTest {
+public class ORMTest1 {
     public static void main(String[] args) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         DButil dbu = new DButil();
         String sql = "select * from student";
@@ -19,9 +19,10 @@ public class ORMTest {
 
     /**
      * 通过反射拿到c的属性到rs中获取值并放入到对应的属性中
-     * @param rs
-     * @param c
-     * @return
+     * 此方法的使用条件是数据库的列名必须与类的属性名保持一致
+     * @param rs 数据库查询结果集
+     * @param c 运行时类
+     * @return List
      */
     public static List orm(ResultSet rs, Class c) throws SQLException, IllegalAccessException, InstantiationException {
         List list = new ArrayList();
